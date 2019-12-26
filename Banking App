@@ -1,0 +1,28 @@
+balance = 0 # We begin with a $0 balance
+option = 'a' # Arbitrary starting option value
+neg = 0 # Withdrawal amount
+while option != 'e':
+    print("Type D to deposit money")
+    print("Type W to withdraw money")
+    print("Type B to display Balance")
+    print("Type E to exit")
+    option = input("Enter your choice now: ").lower()
+    if option == 'd':
+        balance += int(input("Please enter the amount you'd like to deposit: "))
+        print("*****")
+    elif option == 'b':
+        print("Your current balance is: " + str(balance))
+        print("*****")
+    elif option == 'w':
+        neg = int(input("Please enter the amount you'd like to withdraw: "))
+        if neg > balance:
+            print("Insufficient funds - no transaction.")
+            print("*****")
+        else:    
+            balance -= neg 
+            print("*****")
+    elif option == 'e':
+        print("Thank you, have a great day!")
+    else:
+        print("Invalid option choice. Please try again")
+        print("*****")   
